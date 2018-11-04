@@ -36,6 +36,16 @@
         }
     }
 
+    .button-opaque {
+        border-color: #FF9800 !important;
+        color: white;
+    }
+
+    .button-opaque:hover {
+        background-color: ${theme.to} !important;
+        border-color: ${theme.to} !important;
+    }
+
     .button-styled {
         background-color: ${theme.accent} !important;
         border-color: ${theme.accent} !important;
@@ -155,9 +165,8 @@
 
     #video {
         top: 0;
-        left: 0;
-        right: 0;
         width: 100%;
+        height: 576px;
     }
 
     #landing {
@@ -224,6 +233,9 @@
                     <a href="https://github.com/${contact.github_user}/${contact.github_repository}/releases">
                         <button class="button-primary button-styled">Download</button>
                     </a>
+                    <a href="https://github.com/${contact.github_user}/${contact.github_repository}/wiki">
+                        <button class="button button-opaque">Documentation</button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -272,6 +284,13 @@
         <p class="instruction-text">${text.instructions.start}</p>
         <pre class="code-block"><code>${text.instructions.command}</code></pre>
         <p class="instruction-text">${text.instructions.end}</p>
+
+        <h5 class="instruction-text">Docker</h5>
+        <p class="instruction-text">Run with docker</p>
+        <pre class="code-block"><code>docker pull ${contact.github_user}/${contact.github_repository}
+docker run ${text.instructions.docker.options} -it ${contact.github_user}/${contact.github_repository}
+</code></pre>
+        <p class="instruction-text"></p>
     </div>
 
     <div id="footer">

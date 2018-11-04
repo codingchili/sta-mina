@@ -7,27 +7,30 @@
   "text": {
     "title": "Clustered build servers!",
     "heading": "zapperfly-asm",
-    "subheading": "A build server with a little oumph.",
+    "subheading": "A tiny build server for large projects.",
     "feature1": {
       "icon": "fighter-jet",
       "title": "Fast",
-      "content": "Zapperfly is fast! We use hazelcast for clustering and storing logs in memory. Scales to hundreds of nodes without issues."
+      "content": "Zapperfly is fast! We use hazelcast for clustering and store all build logs in memory. Scales to hundreds of nodes without issues."
     },
     "feature2": {
       "icon": "street-view",
       "title": "Simple",
-      "content": "User friendly and modern interface ensures our users stay happy."
+      "content": "User friendly and modern interface ensures our users stay happy. Minimal configuration overhead and works both on windows and linux, even inside a docker container."
     },
     "feature3": {
       "icon": "feather",
       "title": "Customizable",
-      "content": "A small application makes it easy for developers to create their own integrations without relying on third parties."
+      "content": "A small application makes it easy for developers to create their own integrations without relying on third parties. We are tiny; less than 8K lines of code!"
     },
     "instructions": {
-      "header": "installation",
+      "header": "Installation",
       "start": "Setting up your own cluster is easy, simply start the application with,",
       "command": "java -jar zapperfly.jar --website",
-      "end": "This starts the server with the management website enabled and the default cluster group."
+      "end": "This starts the server with the management website enabled and the default cluster group.",
+      "docker": {
+        "options": "-e ZAPPER_PWD=root's-pwd"
+      }
     },
     "footer": "&copy Robin Duda 2018"
   },
