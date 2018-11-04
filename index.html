@@ -44,7 +44,7 @@
     download((data) => {
         this.data = JSON.parse(data);
         onData();
-    }, 'sites/excelastic.json');
+    }, 'sites/' + location.search.split('=')[1] + '.json');
 
 </script>
 <body bgcolor="black"></body>

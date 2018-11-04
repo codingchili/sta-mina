@@ -1,0 +1,51 @@
+{
+  "seo": {
+    "title": "Import data from the Ethereum blockchain into MongoDB and ElasticSearch.",
+    "description": "Import blocks and transactions from the Ethereum blockchain into MongoDB and ElasticSearch. Supports terminal and a graphical mode."
+  },
+  "theme": {
+    "from": "#323232",
+    "to": "#ff0000",
+    "accent": "cyan"
+  },
+  "text": {
+    "heading": "Etherum Importer",
+    "subheading": "Import utility for Ethereum blockchain data.",
+    "feature1": {
+      "icon": "terminal",
+      "title": "Commandline",
+      "content": "Using the commandline mode in the importer you are able to automate tasks using your favorite scripting language."
+    },
+    "feature2": {
+      "icon": "desktop",
+      "title": "Accessible",
+      "content": "With an user friendly interface anyone can be a data scientist on the Ethereum blockchain."
+    },
+    "feature3": {
+      "icon": "sync",
+      "title": "Up-to-date",
+      "content": "We aim to always stay up to date with the latest Geth and ElasticSearch, making sure your data flows are uninterrupted!"
+    },
+    "instructions": {
+      "header": "Setup",
+      "start": "Start the application with any of the following,",
+      "command": "java -jar <filename>.jar --import\njava -jar <filename>.jar --gui\njava -jar <filename>.jar --help",
+      "end": "--import starts the importer from the configuration.<br>--gui starts the graphical user interface.",
+      "docker": {
+        "enabled": false,
+        "options": "-e es_host=? -e es_port=?"
+      }
+    },
+    "footer": "&copy Robin Duda 2018"
+  },
+  "contact": {
+    "github_repository": "ethereum-ingest",
+    "github_user": "codingchili",
+    "email": "rduda@kth.se",
+    "linkedin": "rduda"
+  },
+  "external": {
+    "banner": "https://github.com/codingchili/ethereum-ingest/raw/master/eth-ingest-gui.webp",
+    "youtube": "https://www.youtube.com/embed/FFI9OnW9IuI"
+  }
+}
