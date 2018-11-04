@@ -1,0 +1,44 @@
+{
+  "theme": {
+    "from": "#323232",
+    "to": "#00b8d4",
+    "accent": "#FF9800"
+  },
+  "text": {
+    "title": "Clustered build servers!",
+    "heading": "zapperfly-asm",
+    "subheading": "A build server with a little oumph.",
+    "feature1": {
+      "icon": "fighter-jet",
+      "title": "Fast",
+      "content": "Zapperfly is fast! We use hazelcast for clustering and storing logs in memory. Scales to hundreds of nodes without issues."
+    },
+    "feature2": {
+      "icon": "street-view",
+      "title": "Simple",
+      "content": "User friendly and modern interface ensures our users stay happy."
+    },
+    "feature3": {
+      "icon": "feather",
+      "title": "Customizable",
+      "content": "A small application makes it easy for developers to create their own integrations without relying on third parties."
+    },
+    "instructions": {
+      "header": "installation",
+      "start": "Setting up your own cluster is easy, simply start the application with,",
+      "command": "java -jar zapperfly.jar --website",
+      "end": "This starts the server with the management website enabled and the default cluster group."
+    },
+    "footer": "&copy Robin Duda 2018"
+  },
+  "contact": {
+    "github_repository": "zapperfly-asm",
+    "github_user": "codingchili",
+    "email": "rduda@kth.se",
+    "linkedin": "rduda"
+  },
+  "external": {
+    "banner": "https://raw.githubusercontent.com/codingchili/zapperfly-asm/master/preview.webp",
+    "youtube": "https://www.youtube.com/embed/t4fKgGerj8I"
+  }
+}
