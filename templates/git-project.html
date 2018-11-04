@@ -1,0 +1,302 @@
+<!doctype html>
+<html>
+<head>
+    <title>${text.title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="${theme.to}">
+    <link rel="shortcut icon" href="../favicon.ico"/>
+    <link rel="stylesheet" href="../templates/skeleton.css">
+    <link rel="stylesheet" href="../templates/normalize.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"
+            integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0"
+            crossorigin="anonymous"></script>
+</head>
+<style>
+
+    body {
+        padding: 0;
+        margin: 0;
+        color: #fff;
+        background-image: linear-gradient(to right, ${theme.from}, ${theme.to});
+        mix-blend-mode: multiply;
+    }
+
+    #content {
+        animation: fadein 0.8s;
+    }
+
+    @keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .button-opaque {
+        border-color: #FF9800 !important;
+        color: white;
+    }
+
+    .button-opaque:hover {
+        background-color: ${theme.to} !important;
+        border-color: ${theme.to} !important;
+    }
+
+    .button-styled {
+        background-color: ${theme.accent} !important;
+        border-color: ${theme.accent} !important;
+    }
+
+    .button-styled:hover {
+        background-color: ${theme.to} !important;
+        border-color: ${theme.to} !important;
+    }
+
+    .banner {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+    }
+
+    .banner-text {
+        background-color: #00000064;
+        padding: 48px;
+    }
+
+    .heading {
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+
+    .subheading {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .download-btn {
+        text-align: center;
+    }
+
+    svg {
+        padding: 6px;
+        min-width: 32px;
+        min-height: 32px;
+        color: ${theme.to};
+        cursor: pointer;
+    }
+
+    svg:hover {
+        color: ${theme.accent}
+    }
+
+    a, a:link, a:visited {
+        text-decoration: none;
+        color: ${theme.accent};
+    }
+
+    a:hover, a:active {
+        text-decoration: none;
+        color: ${theme.to};
+    }
+
+
+    .menu {
+        position: absolute;
+        background-image: linear-gradient(to right, ${theme.from}, ${theme.to});
+        width: 100%;
+    }
+
+    .features {
+        color: #333333;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        background-color: white;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.29), 0 12px 24px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .feature {
+        display: flex;
+        flex-direction: column;
+        margin-top: 32px;
+        margin-bottom: 32px;
+        max-width: 276px;
+    }
+
+    .product-image {
+        opacity: 0.84;
+        max-height: 64%;
+        max-width: 100%;
+        margin-top: 10vh;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6), 0 12px 39px 0 rgba(0, 0, 0, 0.4)
+    }
+
+    .feature-icon {
+        color: ${theme.accent};
+        min-width: 100%;
+        min-height: 64px;
+    }
+
+    .feature-title {
+        text-align: center;
+    }
+
+    @media (min-width: 1024px) {
+        #video-container {
+            width: 1024px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    #video-container {
+        position: relative;
+        margin-top: 16vh;
+        padding-bottom: 16vh;
+    }
+
+    #video {
+        top: 0;
+        width: 100%;
+        height: 576px;
+    }
+
+    #landing {
+        height: 100vh;
+        text-align: center;
+    }
+
+    #instructions {
+        background-color: #fff;
+        color: #323232;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.29), 0 12px 24px 0 rgba(0, 0, 0, 0.19);
+        max-width: 768px;
+        margin: auto;
+    }
+
+    #footer {
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        margin-top: 32px;
+        margin-bottom: 16px;
+    }
+
+    .code-block {
+        text-align: left;
+        width: 80%;
+        margin: auto;
+    }
+
+    .instruction-text {
+        padding: 24px;
+        margin: 0;
+    }
+
+</style>
+<body bgcolor="black">
+
+<div id="content">
+    <div class="menu">
+        <a href="https://github.com/${contact.github_user}" rel="noopener noreferrer" target="_blank">
+            <i class="fab fa-github menu-item"></i>
+        </a>
+        <a href="mailto:${contact.email}">
+            <i class="far fa-envelope menu-item"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/${contact.linkedin}" rel="noopener noreferrer" target="_blank">
+            <i class="fab fa-linkedin menu-item"></i>
+        </a>
+    </div>
+
+    <a href="https://github.com/${contact.github_user}/${contact.github_repository}">
+        <img style="position: absolute; top: 0; right: 0; border: 0; z-index: 100"
+             src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
+    <div id="landing">
+        <img class="product-image" src="${external.banner}">
+
+        <div class="banner">
+            <div class="banner-text">
+                <h3 class="heading">${text.heading}</h3>
+                <h5 class="subheading">${text.subheading}</h5>
+                <div class="download-btn">
+                    <a href="https://github.com/${contact.github_user}/${contact.github_repository}/releases">
+                        <button class="button-primary button-styled">Download</button>
+                    </a>
+                    <a href="https://github.com/${contact.github_user}/${contact.github_repository}/wiki">
+                        <button class="button button-opaque">Documentation</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature">
+            <i class="fas fa-${text.feature1.icon} feature-icon"></i>
+            <span class="feature-title">
+            <h5>${text.feature1.title}</h5>
+        </span>
+            <span class="feature-text">
+            ${text.feature1.content}
+        </span>
+        </div>
+        <div class="feature">
+            <i class="fas fa-${text.feature2.icon} feature-icon"></i>
+            <span class="feature-title">
+            <h5>${text.feature2.title}</h5>
+        </span>
+            <span class="feature-text">
+            ${text.feature2.content}
+        </span>
+        </div>
+        <div class="feature">
+            <i class="fas fa-${text.feature3.icon}-alt feature-icon"></i>
+            <span class="feature-title">
+            <h5>${text.feature3.title}</h5>
+        </span>
+            <span class="feature-text">
+            ${text.feature3.content}
+     </span>
+        </div>
+    </div>
+
+    <div id="video-container">
+
+        <iframe id="video" width="768" height="410" src="${external.youtube}" frameborder="0"
+                gesture="media" allowfullscreen="false">
+        </iframe>
+
+    </div>
+
+    <div id="instructions">
+        <h5 class="instruction-text">${text.instructions.header}</h5>
+        <p class="instruction-text">${text.instructions.start}</p>
+        <pre class="code-block"><code>${text.instructions.command}</code></pre>
+        <p class="instruction-text">${text.instructions.end}</p>
+
+        <h5 class="instruction-text">Docker</h5>
+        <p class="instruction-text">Run with docker</p>
+        <pre class="code-block"><code>docker pull ${contact.github_user}/${contact.github_repository}
+docker run ${text.instructions.docker.options} -it ${contact.github_user}/${contact.github_repository}
+</code></pre>
+        <p class="instruction-text"></p>
+    </div>
+
+    <div id="footer">
+        ${text.footer} - site generated with <a href="https://github.com/codingchili/sta-mina">sta-mina</a>.
+    </div>
+</div>
+
+</body>
+</html>
