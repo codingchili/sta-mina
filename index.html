@@ -18,12 +18,11 @@
 
     function onData() {
         if (this.template != null && this.data != null) {
-
-            // don't require 'this.data' within template.
             let theme = this.data.theme;
             let text = this.data.text;
             let contact = this.data.contact;
             let external = this.data.external;
+            let seo = this.data.seo;
 
             if (this.mode === 'dom') {
                 document.open();
@@ -45,9 +44,8 @@
     download((data) => {
         this.data = JSON.parse(data);
         onData();
-    }, 'sites/zapperfly.json');
+    }, 'sites/excelastic.json');
 
 </script>
-<body bgcolor="black">
-</body>
+<body bgcolor="black"></body>
 </html>

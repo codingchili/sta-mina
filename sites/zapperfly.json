@@ -1,11 +1,14 @@
 {
+  "seo": {
+    "title": "Tiny clustered build server for developers - Zapperfly-ASM",
+    "description": "Zapperfly is a tiny yet performant build server for which you can easily make your own integrations and not rely on third parties."
+  },
   "theme": {
     "from": "#323232",
     "to": "#00b8d4",
     "accent": "#FF9800"
   },
   "text": {
-    "title": "Clustered build servers!",
     "heading": "zapperfly-asm",
     "subheading": "A tiny build server for large projects.",
     "feature1": {
@@ -24,7 +27,7 @@
       "content": "A small application makes it easy for developers to create their own integrations without relying on third parties. We are tiny; less than 8K lines of code!"
     },
     "instructions": {
-      "header": "Installation",
+      "header": "Setup",
       "start": "Setting up your own cluster is easy, simply start the application with,",
       "command": "java -jar zapperfly.jar --website",
       "end": "This starts the server with the management website enabled and the default cluster group.",
