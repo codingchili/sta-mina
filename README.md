@@ -1,7 +1,7 @@
 # sta-mina
 minimal static site generator. status: in development.
 
-![preview](https://raw.githubusercontent.com/codingchili/sta-mina/master/preview.webp "Current snapshot version")
+![preview](https://raw.githubusercontent.com/codingchili/sta-mina/master/preview.png "Current snapshot version")
 
 Sample using the first template and a template rendered with template literals + a json file to hold the template data.
 

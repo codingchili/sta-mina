@@ -74,14 +74,12 @@
     }
 
     .heading {
-        width: 100%;
         text-align: center;
         display: block;
     }
 
     .subheading {
         display: block;
-        width: 100%;
         text-align: center;
     }
 
@@ -98,7 +96,7 @@
     }
 
     svg:hover {
-        color: ${theme.accent}
+        color: ${theme.accent};
     }
 
     a, a:link, a:visited {
@@ -111,6 +109,10 @@
         color: ${theme.to};
     }
 
+    .text-center {
+        text-align: center;
+    }
+
 
     .menu {
         position: absolute;
@@ -118,7 +120,7 @@
         width: 100%;
     }
 
-    .features {
+    .hints {
         color: #333333;
         display: flex;
         flex-wrap: wrap;
@@ -127,7 +129,7 @@
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.29), 0 12px 24px 0 rgba(0, 0, 0, 0.19);
     }
 
-    .feature {
+    .hint {
         display: flex;
         flex-direction: column;
         margin-top: 32px;
@@ -143,13 +145,13 @@
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6), 0 12px 39px 0 rgba(0, 0, 0, 0.4)
     }
 
-    .feature-icon {
+    .hint-icon {
         color: ${theme.accent};
         min-width: 100%;
         min-height: 64px;
     }
 
-    .feature-title {
+    .hint-title {
         text-align: center;
     }
 
@@ -173,6 +175,7 @@
     }
 
     .video-wrapper {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.29), 0 12px 24px 0 rgba(0, 0, 0, 0.19);
         position: relative;
         padding-bottom: 56.25%;
         padding-top: 25px;
@@ -191,12 +194,28 @@
         text-align: center;
     }
 
+    #features {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.29), 0 12px 24px 0 rgba(0, 0, 0, 0.19);
+        background-color: #fff;
+        color: #323232;
+        max-width: 768px;
+        margin-top: 16vh;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .feature-table {
+        width: 80%;
+        margin: auto;
+    }
+
     #instructions {
         background-color: #fff;
         color: #323232;
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.29), 0 12px 24px 0 rgba(0, 0, 0, 0.19);
         max-width: 768px;
         margin: auto;
+        margin-top: 16vh;
     }
 
     #footer {
@@ -213,7 +232,7 @@
         margin: auto;
     }
 
-    .instruction-text {
+    p, h1, h2, h3, h4, h5, h6 {
         padding: 24px;
         margin: 0;
     }
@@ -258,36 +277,35 @@
         </div>
     </div>
 
-    <div class="features">
-        <div class="feature">
-            <i class="fas fa-${text.feature1.icon} feature-icon"></i>
-            <span class="feature-title">
-            <h5>${text.feature1.title}</h5>
+    <div class="hints">
+        <div class="hint">
+            <i class="fas fa-${text.hint_1.icon} hint-icon"></i>
+            <span class="hint-title">
+            <h5>${text.hint_1.title}</h5>
         </span>
-            <span class="feature-text">
-            ${text.feature1.content}
-        </span>
-        </div>
-        <div class="feature">
-            <i class="fas fa-${text.feature2.icon} feature-icon"></i>
-            <span class="feature-title">
-            <h5>${text.feature2.title}</h5>
-        </span>
-            <span class="feature-text">
-            ${text.feature2.content}
+            <span class="hint-text">
+            ${text.hint_1.content}
         </span>
         </div>
-        <div class="feature">
-            <i class="fas fa-${text.feature3.icon}-alt feature-icon"></i>
-            <span class="feature-title">
-            <h5>${text.feature3.title}</h5>
+        <div class="hint">
+            <i class="fas fa-${text.hint_2.icon} hint-icon"></i>
+            <span class="hint-title">
+            <h5>${text.hint_2.title}</h5>
         </span>
-            <span class="feature-text">
-            ${text.feature3.content}
+            <span class="hint-text">
+            ${text.hint_2.content}
+        </span>
+        </div>
+        <div class="hint">
+            <i class="fas fa-${text.hint_3.icon}-alt hint-icon"></i>
+            <span class="hint-title">
+            <h5>${text.hint_3.title}</h5>
+        </span>
+            <span class="hint-text">
+            ${text.hint_3.content}
      </span>
         </div>
     </div>
-
 
     <div class="video-section">
         <div class="video-wrapper">
@@ -295,21 +313,50 @@
         </div>
     </div>
 
-    <div id="instructions">
-        <h5 class="instruction-text">${text.instructions.header}</h5>
-        <p class="instruction-text">${text.instructions.start}</p>
-        <pre class="code-block"><code>${text.instructions.command}</code></pre>
-        <p class="instruction-text">${text.instructions.end}</p>
+    <div id="features">
+        <h5>Features</h5>
+        <table class="feature-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>${text.license.name} (*)</th>
+                </tr>
+            </thead>
+            <tbody>
+               <tr>
+                    <td>Best server ever</td>
+                    <td><i class="fas fa-check"></i></td>
+               </tr>
+               <tr>
+                    <td>Annoying bugs</td>
+                    <td><i class="fas fa-times"></i></td>
+               </tr>
+               <tr>
+                    <td>Future feature</td>
+                    <td><i class="far fa-clock"></i></td>
+               </tr>  
+            </tbody>
+        </table>
+        <p>some more text if you want</p>
+        <p class="text-center">*) ${text.license.description}</p>
+    </div>
 
-        <h5 class="instruction-text">Docker</h5>
-        <p class="instruction-text">Run with docker</p>
-        <pre class="code-block"><code>${text.instructions.docker.command}</code></pre>
-</code></pre-->
-        <p class="instrution-text">.</p>
+    <div id="instructions">
+        <h5>${text.instructions.header}</h5>
+        <p>${text.instructions.start}</p>
+        <pre class="code-block"><code>${text.instructions.command}</code></pre>
+        <p>${text.instructions.end}</p>
+
+        <div ${text.instructions.docker.enabled ? '' : 'hidden'}>
+            <h5>Docker</h5>
+            <p>Run with docker</p>
+            <pre class="code-block"><code>${text.instructions.docker.command}</code></pre></code></pre>
+            <p></p>
+        </div>
     </div>
 
     <div id="footer">
-        ${text.footer} - site generated with <a href="https://github.com/codingchili/sta-mina">sta-mina</a>.
+        <h6>${text.footer} - site generated with <a href="https://github.com/codingchili/sta-mina">sta-mina</a>.</h6>
     </div>
 </div>
 

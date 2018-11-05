@@ -12,20 +12,24 @@
   "text": {
     "heading": "Excelastic",
     "subheading": "Import utility for ElasticSearch for excel and CSV files.",
-    "feature1": {
+    "hint_1": {
       "icon": "terminal",
       "title": "Commandline",
       "content": "Using the commandline mode in Excelastic you are able to automate tasks using your favorite scripting language."
     },
-    "feature2": {
+    "hint_2": {
       "icon": "desktop",
       "title": "Accessible",
       "content": "With an user friendly web interface employees in sales/management can use it too! If you need authentication simply setup a reverse proxy."
     },
-    "feature3": {
+    "hint_3": {
       "icon": "sync",
       "title": "Up-to-date",
       "content": "We aim to always stay up to date with the latest elasticsearch version, bringing you the greatest performance and latest fixes!"
+    },
+     "license": {
+        "name": "MIT",
+        "description": "Free to use for personal and commercial purposes."
     },
     "instructions": {
       "header": "Setup",
@@ -33,7 +37,8 @@
       "command": "java -jar excelastic.jar",
       "end": "This starts the server with the management website enabled. Its also possible to import straight from the command line.",
       "docker": {
-        "options": "-e es_host=? -e es_port=?"
+        "enabled": true,
+        "command": "docker run -e es_host=? -e es_port=? codingchili/excelastic"
       }
     },
     "footer": "&copy Robin Duda 2018"
