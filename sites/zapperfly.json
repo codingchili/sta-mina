@@ -44,7 +44,7 @@
     "linkedin": "rduda"
   },
   "external": {
-    "banner": "https://raw.githubusercontent.com/codingchili/zapperfly-asm/master/preview.webp",
-    "youtube": "https://www.youtube.com/embed/t4fKgGerj8I"
+    "banner": "//raw.githubusercontent.com/codingchili/zapperfly-asm/master/preview.webp",
+    "youtube": "//www.youtube.com/embed/t4fKgGerj8I"
   }
 }
