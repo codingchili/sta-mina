@@ -1,13 +1,9 @@
 <!doctype html>
 <html>
 <script>
-    var mode = 'dom';
-    let template;
-    let data;
-
     function download(callback, resource) {
         let xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
+        xhttp.onreadystatechange = function() {
             if (this.readyState === 4 && this.status === 200) {
                 callback(xhttp.responseText);
             }
@@ -16,30 +12,37 @@
         xhttp.send();
     }
 
-    function onData() {
-        if (this.template != null && this.data != null) {
-            let {theme, text, contact, external, seo} = this.data;
+    function loaded(content) {
+        this.data = content.data || this.data;
+        this.template = content.template || this.template;
 
-            if (this.mode === 'dom') {
-                document.open();
-                document.write(eval('`' + this.template + '`'));
-                document.close();
-            } else if (this.mode === 'inner') {
-                document.body.innerHTML = eval('`' + this.template + '`');
-            } else {
-                alert(`unsupported rendering mode ${this.mode}.`);
+        if (this.data != null && this.template != null) {
+            let {theme, text, contact, external, seo} = this.data;
+            document.open();
+            try {
+                let rendered = eval('`' + this.template + '`')
+                document.write(rendered);
+            } catch (e) {
+                document.write(`
+                    <html>
+                    <body bgcolor="black">
+                        <h1 style="color:cyan;">${e.message}</h1>
+                        <h4 style="color:red;"><pre><code>${e.stack}</code></pre></h4>
+                        <span style="position:absolute;bottom:32px;left:0;right:0;color:lime;text-align:center;">
+                            sta-mina &copy 2018 Robin Duda
+                        </span>
+                    </body>
+                    </html>
+                `);
             }
+            document.close();
         }
     }
 
-    download((template) => {
-        this.template = template;
-        onData();
-    }, 'templates/git-project.html');
+    download((template) => { loaded({template: template}) }, 'templates/git-project.html');
 
     download((data) => {
-        this.data = JSON.parse(data);
-        onData();
+        loaded({data: JSON.parse(data)});
     }, 'sites/' + location.search.split('=')[1] + '.json');
 
 </script>
