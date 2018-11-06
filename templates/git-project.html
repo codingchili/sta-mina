@@ -363,7 +363,18 @@
         <div ${text.instructions.docker.enabled ? '' : 'hidden'}>
             <h5>Docker</h5>
             <p>Run with docker</p>
-            <pre class="code-block"><code>${text.instructions.docker.command}</code></pre></code></pre>
+            <pre class="code-block"><code>${text.instructions.docker.command}</code></pre>
+            <p></p>
+        </div>
+
+        <div ${text.instructions.staging.enabled ? '' : 'hidden'}>
+            <h5>Test drive</h5>
+            <p>Take a test drive in our public staging environment.</p>
+            <a href="${text.instructions.staging.url}">
+                <button style="margin: auto; display: block;" class="button button-primary">
+                    ${text.instructions.staging.url}
+                </button>
+            </a>
             <p></p>
         </div>
     </div>
