@@ -18,11 +18,7 @@
 
     function onData() {
         if (this.template != null && this.data != null) {
-            let theme = this.data.theme;
-            let text = this.data.text;
-            let contact = this.data.contact;
-            let external = this.data.external;
-            let seo = this.data.seo;
+            let {theme, text, contact, external, seo} = this.data;
 
             if (this.mode === 'dom') {
                 document.open();
