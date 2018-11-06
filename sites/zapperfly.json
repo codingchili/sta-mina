@@ -11,21 +11,21 @@
   "text": {
     "heading": "zapperfly-asm",
     "subheading": "A tiny build server for large projects.",
-    "hint_1": {
+    "hints": [{
       "icon": "fighter-jet",
       "title": "Fast",
       "content": "Zapperfly is fast! We use hazelcast for clustering and store all build logs in memory. Scales to hundreds of nodes without issues."
     },
-    "hint_2": {
+    {
       "icon": "street-view",
       "title": "Simple",
       "content": "User friendly and modern interface ensures our users stay happy. Minimal configuration overhead and works both on windows and linux, even inside a docker container."
     },
-    "hint_3": {
+    {
       "icon": "feather",
       "title": "Customizable",
       "content": "A small application makes it easy for developers to create their own integrations without relying on third parties. We are tiny; less than 8K lines of code!"
-    },
+    }],
     "license": {
         "name": "MIT",
         "description": "Free to use for personal and commercial purposes."
@@ -37,7 +37,7 @@
       "end": "This starts the server with the management website enabled and the default cluster group.",
       "docker": {
         "enabled": true,
-        "command": "docker run -e ZAPPER_PWD=root's-pwd codingchili/zapperfly"
+        "command": "docker run codingchili/zapperfly"
       }
     },
     "footer": "&copy Robin Duda 2018"

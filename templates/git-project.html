@@ -58,6 +58,12 @@
         border-color: ${theme.to} !important;
     }
 
+    @media (max-width: 1024px) {
+        .mobile-hidden {
+            visibility: hidden;
+        }
+    }
+
     .banner {
         display: flex;
         flex-direction: column;
@@ -68,7 +74,7 @@
 
     .banner-text {
         background-color: #00000064;
-        padding: 48px;
+        padding-bottom: 24px;
     }
 
     .heading {
@@ -79,6 +85,8 @@
     .subheading {
         display: block;
         text-align: center;
+        padding-top: 0px;
+        padding-bottom: 42px;
     }
 
     .download-btn {
@@ -134,17 +142,33 @@
         margin-bottom: 32px;
         max-width: 276px;
     }
+    
+    @media (min-width: 1024px) {
+        .product-image {
+            position: absolute;
+            margin: auto;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 12vh;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .product-image {
+            margin-top: 6vh;
+        }
+    }
 
     .product-image {
         opacity: 0.92;
         max-height: 64%;
         max-width: 100%;
-        margin-top: 10vh;
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6), 0 12px 39px 0 rgba(0, 0, 0, 0.4)
     }
 
     .hint-icon {
-        color: ${theme.accent};
+        color: ${theme.to};
         min-width: 100%;
         min-height: 64px;
     }
@@ -258,7 +282,7 @@
     </div>
 
     <a href="https://github.com/${contact.github_user}/${contact.github_repository}">
-        <img style="position: absolute; top: 0; right: 0; border: 0; z-index: 100"
+        <img style="position: absolute; top: 0; right: 0; border: 0; z-index: 100" class="mobile-hidden"
              src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
     </a>
 
@@ -282,33 +306,17 @@
     </div>
 
     <div class="hints">
-        <div class="hint">
-            <i class="fas fa-${text.hint_1.icon} hint-icon"></i>
-            <span class="hint-title">
-            <h5>${text.hint_1.title}</h5>
-        </span>
-            <span class="hint-text">
-            ${text.hint_1.content}
-        </span>
-        </div>
-        <div class="hint">
-            <i class="fas fa-${text.hint_2.icon} hint-icon"></i>
-            <span class="hint-title">
-            <h5>${text.hint_2.title}</h5>
-        </span>
-            <span class="hint-text">
-            ${text.hint_2.content}
-        </span>
-        </div>
-        <div class="hint">
-            <i class="fas fa-${text.hint_3.icon}-alt hint-icon"></i>
-            <span class="hint-title">
-            <h5>${text.hint_3.title}</h5>
-        </span>
-            <span class="hint-text">
-            ${text.hint_3.content}
-     </span>
-        </div>
+        ${text.hints.map(item => `
+            <div class="hint">
+                <i class="fas fa-${item.icon} hint-icon"></i>
+                <span class="hint-title">
+                    <h5>${item.title}</h5>
+                </span>
+                <span class="hint-text">
+                    ${item.content}
+                </span>
+            </div>
+        `).join('')}
     </div>
 
     <div class="video-section">
@@ -318,39 +326,39 @@
         </div>
     </div>
 
-    <div id="features">
+    <div id="features" ${text.features.enabled ? '' : 'hidden'}>
         <h5>Features</h5>
         <table class="feature-table">
             <thead>
                 <tr>
                     <th></th>
-                    <th>${text.license.name} (*)</th>
+                    ${text.features.licenses.map(item => `
+                        <th>${item}</th>
+                    `).join('')}
                 </tr>
             </thead>
             <tbody>
-               <tr>
-                    <td>Best server ever</td>
-                    <td><i class="fas fa-check"></i></td>
-               </tr>
-               <tr>
-                    <td>Annoying bugs</td>
-                    <td><i class="fas fa-times"></i></td>
-               </tr>
-               <tr>
-                    <td>Future feature</td>
-                    <td><i class="far fa-clock"></i></td>
-               </tr>  
+               ${text.features.list.map(item => `
+                    <tr>
+                        <td>${item.name}</td>
+                        ${item.supported.map(supported => `
+                            <td><i class="${supported == 'clock' ? 'far' : 'fas'} fa-${supported}"</i></td>
+                    `).join('')}
+                    </tr>
+               `).join('')}
             </tbody>
         </table>
-        <p>some more text if you want</p>
-        <p class="text-center">*) ${text.license.description}</p>
+        <p>${text.features.content}</p>
     </div>
 
     <div id="instructions">
-        <h5>${text.instructions.header}</h5>
-        <p>${text.instructions.start}</p>
-        <pre class="code-block"><code>${text.instructions.command}</code></pre>
-        <p>${text.instructions.end}</p>
+
+        <div ${text.instructions.enabled ? '' : 'hidden'}>
+            <h5>${text.instructions.header}</h5>
+            <p>${text.instructions.start}</p>
+            <pre class="code-block"><code>${text.instructions.command}</code></pre>
+            <p>${text.instructions.end}</p>
+        </div>
 
         <div ${text.instructions.docker.enabled ? '' : 'hidden'}>
             <h5>Docker</h5>

@@ -5,37 +5,62 @@
   },
   "theme": {
     "backup": "#15569f",
-    "from": "#9954bb",
-    "to": "#15569f",
-    "accent": "#9954bb"
+    "from": "#fff",
+    "to": "#9954bb",
+    "accent": "#15569f"
   },
   "text": {
     "heading": "Excelastic",
     "subheading": "Import utility for ElasticSearch for excel and CSV files.",
-    "hint_1": {
+    "hints": [{
       "icon": "terminal",
       "title": "Commandline",
       "content": "Using the commandline mode in Excelastic you are able to automate tasks using your favorite scripting language."
     },
-    "hint_2": {
+    {
       "icon": "desktop",
       "title": "Accessible",
       "content": "With an user friendly web interface employees in sales/management can use it too! If you need authentication simply setup a reverse proxy."
     },
-    "hint_3": {
+    {
       "icon": "sync",
       "title": "Up-to-date",
       "content": "We aim to always stay up to date with the latest elasticsearch version, bringing you the greatest performance and latest fixes!"
-    },
-     "license": {
-        "name": "MIT",
-        "description": "Free to use for personal and commercial purposes."
+    }],
+     "features": {
+        "enabled": true,
+        "licenses": [
+            "Free"
+        ],
+        "list": [{
+                "name":"XLS/XLSX import",
+                "supported": ["check"]
+            },
+            {
+                "name":"CSV import",
+                "supported": ["check"]
+            },
+            {
+                "name": "Web interface",
+                "supported": ["check"]
+            },
+            {
+                "name": "Terminal import",
+                "supported": ["check"]
+            },
+            {
+                "name": "JSONL import",
+                "supported": ["clock"]
+            }
+        ],
+        "content": "Excelastic uses the REST-API with the high level REST client. This allows us to more quickly adapt to later versions. When importing we are using the batch indexing API to maximize throughput."
     },
     "instructions": {
-      "header": "Setup",
-      "start": "Start the application with,",
-      "command": "java -jar excelastic.jar",
-      "end": "This starts the server with the management website enabled. Its also possible to import straight from the command line.",
+        "enabled": true,
+        "header": "Setup",
+        "start": "Start the application with,",
+        "command": "java -jar excelastic.jar",
+        "end": "This starts the server with the management website enabled. Its also possible to import straight from the command line.",
       "docker": {
         "enabled": true,
         "command": "docker run -e es_host=? -e es_port=? codingchili/excelastic"
