@@ -26,11 +26,25 @@
       "title": "Customizable",
       "content": "A small application makes it easy for developers to create their own integrations without relying on third parties. We are tiny; less than 8K lines of code!"
     }],
-    "license": {
-        "name": "MIT",
-        "description": "Free to use for personal and commercial purposes."
+    "features": {
+        "enabled": true,
+        "licenses": ["Supported"],
+        "list": [
+            {"name": "Build scheduling over multiple hosts", "supported": ["check"]},
+            {"name": "Real time log monitoring", "supported": ["check"]},
+            {"name": "Run builds within docker containers", "supported": ["check"]},
+            {"name": "Tune workload per instance", "supported": ["check"]},
+            {"name": "Role based authentication", "supported": ["check"]},
+            {"name": "Easy plugin system for integrations", "supported": ["check"]},
+            {"name": "Plugin: Jira update build status", "supported": ["check"]},
+            {"name": "Plugin: stash webhook receiver", "supported": ["check"]},
+            {"name": "Plugin: github webhook receiver", "supported": ["clock"]},
+            {"name": "SVG build status bagde", "supported": ["clock"]}
+        ],
+        "content": "Zapperfly aims to be a minimal bootstrap platform for creating a set of distributed build servers. This means that we encourage our users to create their own modifications and plugins. The plugins provided can be used as an example for developing new plugins."
     },
     "instructions": {
+      "enabled": true,
       "header": "Setup",
       "start": "Setting up your own cluster is easy, simply start the application with,",
       "command": "java -jar zapperfly.jar --website",
@@ -38,6 +52,10 @@
       "docker": {
         "enabled": true,
         "command": "docker run codingchili/zapperfly"
+      },
+      "staging": {
+        "enabled": true,
+        "url": "https://staging.zapperfly.com/"
       }
     },
     "footer": "&copy Robin Duda 2018"

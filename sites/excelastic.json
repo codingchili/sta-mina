@@ -51,9 +51,13 @@
             {
                 "name": "JSONL import",
                 "supported": ["clock"]
+            },
+            {
+                "name": "Authentication",
+                "supported": ["times"]
             }
         ],
-        "content": "Excelastic uses the REST-API with the high level REST client. This allows us to more quickly adapt to later versions. When importing we are using the batch indexing API to maximize throughput."
+        "content": "Excelastic uses the REST-API with the high level REST client. This allows us to more quickly adapt to later versions. When importing we are using the batch indexing API to maximize throughput. If you need additional features like HTTPS and authentication we recommend that you setup a reverse proxy."
     },
     "instructions": {
         "enabled": true,
@@ -63,7 +67,11 @@
         "end": "This starts the server with the management website enabled. Its also possible to import straight from the command line.",
       "docker": {
         "enabled": true,
-        "command": "docker run -e es_host=? -e es_port=? codingchili/excelastic"
+        "command": "docker run codingchili/excelastic" 
+      },
+      "staging": {
+        "enabled": true,
+        "url": "https://github.com/"
       }
     },
     "footer": "&copy Robin Duda 2018"

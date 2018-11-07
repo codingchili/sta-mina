@@ -5,7 +5,7 @@
   },
   "theme": {
     "from": "#323232",
-    "to": "#ff0000",
+    "to": "#993232",
     "accent": "cyan"
   },
   "text": {
@@ -26,16 +26,35 @@
       "title": "Up-to-date",
       "content": "We aim to always stay up to date with the latest Geth and ElasticSearch, making sure your data flows are uninterrupted!"
     }],
-     "license": {
-        "name": "MIT",
-        "description": "Free to use for personal and commercial purposes."
+    "features": {
+        "enabled": true,
+        "licenses": ["Support"],
+        "list": [
+            {"name": "Ethereum client: Geth client 1.8.12+", "supported": ["check"]},
+            {"name": "Ethereum client: Infura client", "supported": ["check"]},
+            {"name": "Platform: Windows support", "supported": ["check"]},
+            {"name": "Platform: Unix support", "supported": ["check"]},
+            {"name": "Import: ElasticSearch 5/6+", "supported": ["check"]},
+            {"name": "Import: MongoDB 3.4.*", "supported": ["check"]},
+            {"name": "Import: Hazelcast 3.8+", "supported": ["check"]},
+            {"name": "Import: CQEngine", "supported": ["check"]},
+            {"name": "Import: into JVM heap", "supported": ["check"]},
+            {"name": "Interface: JavaFX GUI", "supported": ["check"]},
+            {"name": "Interface: command line", "supported": ["check"]},
+            {"name": "Options: block/tx range import", "supported": ["check"]}
+       ],
+       "content": "If you have any suggestions for improvements please open an issue in the github repository."
     },
     "instructions": {
+      "enabled": true,
       "header": "Setup",
       "start": "Start the application with any of the following,",
       "command": "java -jar <filename>.jar --import\njava -jar <filename>.jar --gui\njava -jar <filename>.jar --help",
       "end": "--import starts the importer from the configuration.<br>--gui starts the graphical user interface.",
       "docker": {
+        "enabled": false
+      },
+      "staging": {
         "enabled": false
       }
     },
