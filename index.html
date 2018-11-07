@@ -1,73 +1,7 @@
-<!doctype html>
+<!doctype HTML>
 <html>
-<script>
-    function download(callback, resource) {
-        let xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState === 4 && this.status === 200) {
-                callback(xhttp.responseText);
-            }
-        };
-        xhttp.open("GET", resource, true);
-        xhttp.send();
-    }
-
-    function onerror(e, source) {
-        let line, target;
-
-        if (source.template) {
-            line = e.stack.split('\n');
-            line = line[1].split(':');
-            line = line[line.length -2];
-            target = `${source.template.split('\n')[parseInt(line) -1]}`;
-        }
-
-        document.write(`
-            <html>
-            <body>
-                <h1>${e.message}</h1>
-                <textarea ${line ? '' : 'hidden'} cols="120" rows="1" style="border:none;resize:none;" disabled>
-${line}: ${target}</textarea>
-                <h4>
-                <pre><code>${e.stack}</code></pre>
-                </h4>
-                <span style="position:absolute;bottom:32px;left:0;right:0;text-align:center;">
-                    sta-mina &copy 2018 Robin Duda
-                </span>
-            </body>
-            </html>
-        `);
-    }
-
-    function loaded(content) {
-        this.data = content.data || this.data;
-        this.template = content.template || this.template;
-
-        if (this.data != null && this.template != null) {
-            let {theme, text, contact, external, seo} = this.data;
-            document.open();
-            try {
-                let rendered = eval('`' + this.template + '`')
-                document.write(rendered);
-            } catch (e) {
-                onerror(e, {template: this.template});
-            }
-            document.close();
-        }
-    }
-
-    download(template => { 
-        loaded({template: template});
-    }, 'templates/git-project.html');
-
-    download(data => {
-        try {
-            loaded({data: JSON.parse(data)});
-        } catch (e) {
-            onerror(e, {data: data});
-        }
-    }, 'sites/' + location.search.split('=')[1] + '.json');
-
-</script>
-<body bgcolor="black"></body>
+    <head>
+        <script src="../loader.js"></script>
+    </head>
+    <body onload="load('templates/git-project.html', 'sites/' + location.search.split('=')[1] + '.json');"></body>
 </html>

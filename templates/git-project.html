@@ -7,14 +7,16 @@
 
     <meta name="description" content="${seo.description}">
 
+    <script src="../loader.js"></script>
+
     <link rel="shortcut icon" href="../favicon.ico"/>
     <link rel="stylesheet" href="../templates/skeleton.css">
     <link rel="stylesheet" href="../templates/normalize.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
           integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"
+<!--    <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"
             integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0"
-            crossorigin="anonymous"></script>
+            crossorigin="anonymous"></script>-->
 <style>
     body {
         padding: 0;
@@ -93,7 +95,8 @@
         text-align: center;
     }
 
-    svg {
+    i {
+        font-size: 32px;
         padding: 6px;
         min-width: 32px;
         min-height: 32px;
@@ -174,6 +177,8 @@
         color: ${theme.to};
         min-width: 100%;
         min-height: 64px;
+        font-size: 64px;
+        text-align: center;
     }
 
     .hint-title {
@@ -264,12 +269,12 @@
 
 </style>
 <script>
-    function loaded() {
+    function youtube_async() {
         document.getElementById('video-frame').src = "${external.youtube}";
     }
 </script>
 </head>
-<body bgcolor="black" onload="loaded();">
+<body bgcolor="black" onload="youtube_async();">
 
 <div id="content">
     <div class="menu">
@@ -384,6 +389,7 @@
 
     <div id="footer">
         <h6>${text.footer} - site generated with <a href="https://github.com/codingchili/sta-mina">sta-mina</a>.</h6>
+        ${link('../templates/git-project.html', '../sites/zapperfly.json', 'hello')}
     </div>
 </div>
 </body>
