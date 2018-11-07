@@ -12,6 +12,33 @@
         xhttp.send();
     }
 
+    function onerror(e, source) {
+        let line, target;
+
+        if (source.template) {
+            line = e.stack.split('\n');
+            line = line[1].split(':');
+            line = line[line.length -2];
+            target = `${source.template.split('\n')[parseInt(line) -1]}`;
+        }
+
+        document.write(`
+            <html>
+            <body>
+                <h1>${e.message}</h1>
+                <textarea ${line ? '' : 'hidden'} cols="120" rows="1" style="border:none;resize:none;" disabled>
+${line}: ${target}</textarea>
+                <h4>
+                <pre><code>${e.stack}</code></pre>
+                </h4>
+                <span style="position:absolute;bottom:32px;left:0;right:0;text-align:center;">
+                    sta-mina &copy 2018 Robin Duda
+                </span>
+            </body>
+            </html>
+        `);
+    }
+
     function loaded(content) {
         this.data = content.data || this.data;
         this.template = content.template || this.template;
@@ -23,26 +50,22 @@
                 let rendered = eval('`' + this.template + '`')
                 document.write(rendered);
             } catch (e) {
-                document.write(`
-                    <html>
-                    <body bgcolor="black">
-                        <h1 style="color:cyan;">${e.message}</h1>
-                        <h4 style="color:red;"><pre><code>${e.stack}</code></pre></h4>
-                        <span style="position:absolute;bottom:32px;left:0;right:0;color:lime;text-align:center;">
-                            sta-mina &copy 2018 Robin Duda
-                        </span>
-                    </body>
-                    </html>
-                `);
+                onerror(e, {template: this.template});
             }
             document.close();
         }
     }
 
-    download((template) => { loaded({template: template}) }, 'templates/git-project.html');
+    download(template => { 
+        loaded({template: template});
+    }, 'templates/git-project.html');
 
-    download((data) => {
-        loaded({data: JSON.parse(data)});
+    download(data => {
+        try {
+            loaded({data: JSON.parse(data)});
+        } catch (e) {
+            onerror(e, {data: data});
+        }
     }, 'sites/' + location.search.split('=')[1] + '.json');
 
 </script>
