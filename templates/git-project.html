@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
     <title>${seo.title}</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,user-scalable=yes"> 
@@ -7,16 +7,14 @@
 
     <meta name="description" content="${seo.description}">
 
-    <script src="../loader.js"></script>
+    <link rel="preload" href="../templates/skeleton.css" as="style" onload="this.rel='stylesheet'"/>
+    <link rel="preload" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" as="style" onload="this.rel='stylesheet'"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"/>
 
+    <link rel="preconnect" href="${external.banner}"/>
     <link rel="shortcut icon" href="../favicon.ico"/>
-    <link rel="stylesheet" href="../templates/skeleton.css">
-    <link rel="stylesheet" href="../templates/normalize.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-<!--    <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"
-            integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0"
-            crossorigin="anonymous"></script>-->
+    <script src="../loader.js" async/></script>
+    
 <style>
     body {
         padding: 0;
@@ -270,7 +268,9 @@
 </style>
 <script>
     function youtube_async() {
-        document.getElementById('video-frame').src = "${external.youtube}";
+        setTimeout(() => {
+            document.getElementById('video-frame').src = "${external.youtube}";
+        }, 500);
     }
 </script>
 </head>
@@ -279,13 +279,13 @@
 <div id="content">
     <div class="menu">
         <a href="https://github.com/${contact.github_user}" rel="noopener noreferrer" target="_blank">
-            <i class="fab fa-github menu-item"></i>
+            <i class="fab fa-github menu-item" alt="github"></i>
         </a>
         <a href="mailto:${contact.email}">
-            <i class="far fa-envelope menu-item"></i>
+            <i class="far fa-envelope menu-item" alt="email"></i>
         </a>
         <a href="https://www.linkedin.com/in/${contact.linkedin}" rel="noopener noreferrer" target="_blank">
-            <i class="fab fa-linkedin menu-item"></i>
+            <i class="fab fa-linkedin menu-item" alt="linkedin"></i>
         </a>
     </div>
 
@@ -295,7 +295,7 @@
     </a>
 
     <div id="landing">
-        <img class="product-image" src="${external.banner}">
+        <img class="product-image" src="${external.banner}" alt="product-image">
 
         <div class="banner">
             <div class="banner-text">
@@ -329,7 +329,8 @@
 
     <div class="video-section">
         <div class="video-wrapper">
-            <iframe id="video-frame" src="about:blank" class="video-object" frameborder="0" allowfullscreen="allowfullscreen">
+            <iframe id="video-frame" src="about:blank" class="video-object" 
+                    frameborder="0" allowfullscreen="allowfullscreen" title="youtube video">
             </iframe>
         </div>
     </div>

@@ -6,7 +6,7 @@
   "theme": {
     "from": "#323232",
     "to": "#993232",
-    "accent": "cyan"
+    "accent": "#009999"
   },
   "text": {
     "heading": "Etherum Importer",

@@ -1,3 +1,6 @@
+/* 
+ *  Loader.js for sta-mina.
+ */
 function download(callback, resource) {
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -47,7 +50,7 @@ function link_preload(template, data) {
 }
 
 function link(template, data, content) {
-    return `<a onmouseover="link_preload('${template}', '${data}')" onmousedown="on_link('${template}', '${data}')">${content}</a>`; 
+    return `<a href="javascript:void(0);" onmouseover="link_preload('${template}', '${data}')" onmousedown="on_link('${template}', '${data}')">${content}</a>`; 
 }
 
 function on_link(template, data) {
@@ -69,6 +72,7 @@ function loaded(content) {
         try {
             let rendered = eval('`' + this.template + '`')
             document.write(rendered);
+            window.scroll(0, 0);
         } catch (e) {
             onerror(e, {template: this.template});
         }

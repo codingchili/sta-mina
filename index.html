@@ -1,7 +1,9 @@
 <!doctype HTML>
 <html>
     <head>
-        <script src="../loader.js"></script>
+        <script rel="preconnect" src="../loader.js"></script>
+        <script>
+            load('templates/git-project.html', 'sites/' + location.search.split('=')[1] + '.json');
+        </script>
     </head>
-    <body onload="load('templates/git-project.html', 'sites/' + location.search.split('=')[1] + '.json');"></body>
 </html>
