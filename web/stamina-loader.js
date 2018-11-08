@@ -40,6 +40,11 @@ ${line}: ${target}</textarea>
     document.close();
 }
 
+// no-op because the loader is already loaded at this stage.
+function stamina_loader() {
+	return ``;
+}
+
 function link_preload(template, data) {
     this.data = null;
     this.template = null;
