@@ -1,0 +1,30 @@
+{
+  "name": "sta-mina",
+  "version": "0.1.0",
+  "description": "Stamina is a frontend nanoframework and static site generator.",
+  "main": "sta-mina.js",
+  "dependencies": {
+    "argparse": "^1.0.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codingchili/sta-mina.git"
+  },
+  "keywords": [
+    "static-site",
+    "generator",
+    "web",
+    "dynamic",
+    "static"
+  ],
+  "author": "Robin Duda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codingchili/sta-mina/issues"
+  },
+  "homepage": "https://github.com/codingchili/sta-mina#readme"
+}
