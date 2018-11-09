@@ -96,6 +96,11 @@ content  - this is the content of the link that is created.
 
 Example
 ```
+<div class="some-css">
+	${link('templates/git-project.html', 'sites/my-project.json', 
+		`<div>click me</div>`
+	)}
+<div>
 ```
 
 Produces the following link in static mode:
