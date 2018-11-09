@@ -11,7 +11,7 @@ Stamina uses templates that are parsed as template literals. It is a minimal sta
 site generator and web framework in one. With two modes of site generation.
 
 
-## Instaling
+## Installing
 Installing the generator is super easy.
 
 ```
