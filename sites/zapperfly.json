@@ -2,7 +2,7 @@
   "seo": {
 	"analytics": "UA-77574715-3",
     "title": "Tiny clustered build server for developers - Zapperfly-ASM",
-    "description": "Zapperfly is a tiny yet performant build server for which you can easily make your own integrations and not rely on third parties."
+    "description": "Zapperfly is a tiny yet performant build server for which you can easily make your own integrations and not rely on third parties. The frontend is a modern progressive web application written with Polymer. The backend uses Hazelcast for clustering and is reactive with Vert.x."
   },
   "theme": {
     "from": "#323232",

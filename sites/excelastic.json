@@ -2,7 +2,7 @@
   "seo": {
 	"analytics": "UA-77574715-4",
     "title": "Import excel and CSV files into ElasticSearch - with Exelastic",
-    "description": "Easy to use web and commandline based file importer for ElasticSearch. Free to use and easy to set up."
+    "description": "Easy to use web app and commandline based file importer for ElasticSearch. Free to use and easy to set up, compatible with version 5/6 and up. Uses batch indexing with the high level REST API to support multiple versions and transition to newer versions faster."
   },
   "theme": {
     "backup": "#15569f",
