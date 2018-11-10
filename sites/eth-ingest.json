@@ -1,5 +1,6 @@
 {
   "seo": {
+	"analytics": "UA-77574715-2",
     "title": "Import data from the Ethereum blockchain into MongoDB and ElasticSearch.",
     "description": "Import blocks and transactions from the Ethereum blockchain into MongoDB and ElasticSearch. Supports terminal and a graphical mode."
   },

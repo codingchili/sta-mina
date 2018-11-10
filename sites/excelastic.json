@@ -1,5 +1,6 @@
 {
   "seo": {
+	"analytics": "UA-77574715-4",
     "title": "Import excel and CSV files into ElasticSearch - with Exelastic",
     "description": "Easy to use web and commandline based file importer for ElasticSearch. Free to use and easy to set up."
   },
@@ -67,10 +68,10 @@
         "end": "This starts the server with the management website enabled. Its also possible to import straight from the command line.",
       "docker": {
         "enabled": true,
-        "command": "docker run codingchili/excelastic" 
+        "hub": "https://hub.docker.com/r/codingchili/excelastic/" 
       },
       "staging": {
-        "enabled": true,
+        "enabled": false,
         "url": "https://github.com/"
       }
     },

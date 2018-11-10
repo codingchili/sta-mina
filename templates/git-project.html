@@ -16,6 +16,18 @@
     <link rel="preconnect" href="${external.banner}"/>
     <link rel="shortcut icon" href="../favicon.ico"/>
 
+	<script async src="https://www.googletagmanager.com/gtag/js?id=${seo.analytics}"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}   
+
+		gtag('js', new Date());
+		gtag('config', '${seo.analytics}'); 
+	</script>
+
 <style>
     html {
         overflow-x: hidden;
@@ -105,6 +117,12 @@
         min-height: 32px;
         color: ${theme.to};
     }
+
+	.docker-icon {
+		width: 100%;
+		display: block;
+		text-align: center;
+	}
 
     .menu-item {
         cursor: pointer;
@@ -263,6 +281,7 @@
         text-align: left;
         width: 80%;
         margin: auto;
+		font-size: 1.4em;
     }
 
     p, h1, h2, h3, h4, h5, h6 {
@@ -376,9 +395,12 @@
 
         <div ${text.instructions.docker.enabled ? '' : 'hidden'}>
             <h5>Docker</h5>
-            <p>Run with docker</p>
-            <pre class="code-block"><code>${text.instructions.docker.command}</code></pre>
-            <p></p>
+			
+			<a href="${text.instructions.docker.hub}" class="docker-icon text-center">
+				<i class="menu-item fab fa-docker"></i>
+			</a>
+
+            <p class="text-center">Available on the docker hub, please find instructions there.</p>
         </div>
 
         <div ${text.instructions.staging.enabled ? '' : 'hidden'}>
@@ -395,7 +417,6 @@
 
     <div id="footer">
         <h6>${text.footer} - site generated with <a href="https://github.com/codingchili/sta-mina">sta-mina</a>.</h6>
-        ${link('templates/git-project.html', 'sites/zapperfly.json', 'hello')}
     </div>
 </div>
 </body>

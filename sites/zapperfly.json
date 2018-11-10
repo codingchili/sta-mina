@@ -1,5 +1,6 @@
 {
   "seo": {
+	"analytics": "UA-77574715-3",
     "title": "Tiny clustered build server for developers - Zapperfly-ASM",
     "description": "Zapperfly is a tiny yet performant build server for which you can easily make your own integrations and not rely on third parties."
   },
@@ -51,10 +52,10 @@
       "end": "This starts the server with the management website enabled and the default cluster group.",
       "docker": {
         "enabled": true,
-        "command": "docker run codingchili/zapperfly"
+        "hub": "https://hub.docker.com/r/codingchili/zapperfly/"
       },
       "staging": {
-        "enabled": true,
+        "enabled": false,
         "url": "https://staging.zapperfly.com/"
       }
     },
