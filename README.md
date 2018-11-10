@@ -1,5 +1,7 @@
 # sta-mina
-minimal static site generator. status: in development.
+[![npm version](https://badge.fury.io/js/static-mina.svg)](https://badge.fury.io/js/static-mina)
+
+Minimal static/dynamic site generator. status: in development. 
 
 ![preview](https://raw.githubusercontent.com/codingchili/sta-mina/master/preview.png "Current snapshot version")
 
