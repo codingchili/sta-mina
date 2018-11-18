@@ -1,0 +1,11 @@
+{
+  "sites": [
+    {
+      "template": "path/to/your/template.html",
+      "data": "path/to/your/data.json",
+      "dynamic": false,
+      "name": "sample-site",
+      "web": "./web"
+    }
+  ]
+}
