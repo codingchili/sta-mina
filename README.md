@@ -8,7 +8,7 @@ Minimal static/dynamic site generator. status: in development.
 Sample snapshot of a render of the git-project template.
 
 
-## Backround
+## Background
 Stamina uses templates that are parsed as template literals. It is a minimal static
 site generator and web framework in one. With two modes of site generation.
 
@@ -23,16 +23,19 @@ npm install -g static-mina
 'stamina' should now be available on your CLI, check it with
 ```
 λ stamina -h
-usage: sta-mina.js [-h] [-v] [-d] [--template TEMPLATE] [--data DATA]
+usage: console.js [-h] [-v] [-f FILE] [-d] [--template TEMPLATE] [--data DATA]
+                  [--configure]
 
-Sta-mina static site generator and dynamic web bundler manual.
+Sta-mina static site generator.
 
 Optional arguments:
-  -h, --help           Show this help message and exit.
-  -v, --version        Show program's version number and exit.
-  -d, --dynamic        generate a dynamic site, default is false.
-  --template TEMPLATE  local file or URL to a .html template.
-  --data DATA          local file or URL to a .json file.
+  -h, --help            Show this help message and exit.
+  -v, --version         Show program's version number and exit.
+  -f FILE, --file FILE  local file with project settings.
+  -d, --dynamic         generate a dynamic site, default is false.
+  --template TEMPLATE   local file or URL to a .html template.
+  --data DATA           local file or URL to a .json file.
+  --configure           generates project configuration.
 ``` 
 
 Ready to rock!
@@ -85,6 +88,34 @@ Dynamic sites are rendered at runtime, which means that we can point to two temp
 arbitrary locations - maybe you want your site.json to be available in your git repo for example.
 
 After running the above commands the generated site will be present under build/site/*.
+
+#### Multi-project setup
+To create a new project configuration file run the following,
+
+```
+stamina --configure
+```
+
+This creates the file `stamina.json` in your current directory.
+
+```
+{
+  "sites": [
+    {
+      "template": "path/to/your/template.html",
+      "data": "path/to/your/data.json",
+      "dynamic": false,
+      "name": "sample-site",
+      "web": "./web"
+    }
+  ]
+}
+```
+
+Sites is a list of sites you want to build, a template and data file needs to be specified.
+Name is optional and defaults to the filename of the data file. Dynamic indicates if we are to
+generate a dynamic or static site. Web is an optional directory with static resources to copy to the
+output directory, place your css/js/images there.
 
 ## Linking in multi-site projects
 The only real feature apart from site generation is linking. Links are resolved at compile
