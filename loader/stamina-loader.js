@@ -58,11 +58,13 @@ function link(template, data, content) {
     return `<a href="javascript:void(0);" onmouseover="link_preload('${template}', '${data}')" onmousedown="on_link('${template}', '${data}')">${content}</a>`; 
 }
 
-function on_link(template, data) {
-    if (this.template && this.data) {
-        this.loaded({template: this.template, data: this.data});
-    } else {
-        this.load(template, data);
+function on_link(event, template, data) {
+    if (event.which === 1) {
+        if (this.template && this.data) {
+            this.loaded({template: this.template, data: this.data});
+        } else {
+            this.load(template, data);
+        }
     }
 }
 
@@ -75,7 +77,7 @@ function loaded(content) {
 
         document.open();
         try {
-            let rendered = eval('`' + this.template + '`')
+            let rendered = eval('`' + this.template + '`');
             document.write(rendered);
             window.scroll(0, 0);
         } catch (e) {

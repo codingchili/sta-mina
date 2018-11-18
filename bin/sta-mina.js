@@ -1,3 +1,3 @@
 #!/usr/bin/env node
 
-let generator = require('../lib/sta-mina.js');
+let console = require('../lib/console.js');
