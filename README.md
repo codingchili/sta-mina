@@ -18,7 +18,7 @@ site generator and web framework in one. With two modes of site generation.
 Installing the generator is super easy.
 
 ```
-npm install -g static-mina
+λ npm install -g static-mina
 ```
 
 'stamina' should now be available on your CLI, check it with
@@ -77,12 +77,12 @@ Now, create two files `template.html` to hold the template data and `site.json` 
 
 When installed we can generate a static site using the following snippet,
 ```
-stamina --template template.html --data site.json
+λ stamina --template template.html --data site.json
 ```
 
 Alternatively, we can create a dynamically loaded site using this,
 ```
-stamina --dynamic --template template.html --data site.json
+λ stamina --dynamic --template template.html --data site.json
 ```
 
 Dynamic sites are rendered at runtime, which means that we can point to two templates at 
@@ -94,7 +94,7 @@ After running the above commands the generated site will be present under build/
 To create a new project configuration file run the following,
 
 ```
-stamina --configure
+λ stamina --configure
 ```
 
 This creates the file `stamina.json` in your current directory.
@@ -118,6 +118,22 @@ Name is optional and defaults to the filename of the data file. Dynamic indicate
 generate a dynamic or static site. Web is an optional directory with static resources to copy to the
 output directory, place your css/js/images there.
 
+#### Building a multi-project setup
+Build all projects in `stamina.json`
+```
+λ stamina
+```
+
+Build all projects in configuration file settings.json,
+```
+λ stamina -f projects/settings.json
+```
+
+Build with specified project file and site name,
+```
+λ stamina -f projects/settings.json --name mywebsite-1
+```
+
 ## Linking in multi-site projects
 The only real feature apart from site generation is linking. Links are resolved at compile
 time and are used to create multi-site projects.
@@ -140,7 +156,7 @@ Example
 Produces the following link in static mode:
 
 ```
-<a href="javscript:void(0)" onmousedown="location.href='template'">
+<a href="javscript:void(0)" onmousedown="event.which == 1 ? location.href='template' : ''">
 	content
 </a>
 ```
