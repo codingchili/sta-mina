@@ -1,6 +1,6 @@
 {
   "name": "static-mina",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Stamina is a frontend nanoframework and static site generator.",
   "main": "./lib/sta-mina.js",
   "preferGlobal": true,
