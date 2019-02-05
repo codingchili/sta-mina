@@ -2,7 +2,7 @@
 [![npm version](https://badge.fury.io/js/static-mina.svg)](https://badge.fury.io/js/static-mina)
 [![Build Status](https://travis-ci.org/codingchili/sta-mina.svg?branch=master)](https://travis-ci.org/codingchili/sta-mina)
 
-Minimal static/dynamic site generator. status: in development. 
+Minimal static/dynamic site generator. status: in development, YouTube [demo](https://www.youtube.com/watch?v=ZhInxNGllgM) 
 
 ![preview](https://raw.githubusercontent.com/codingchili/sta-mina/master/preview.png "Current snapshot version")
 
