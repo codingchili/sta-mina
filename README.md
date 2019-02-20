@@ -183,5 +183,7 @@ implemted yet. Altough it is planned and is easily implemented in the loader :)
 
 ## Contributing
 
-This project is in an experimental stage, we don't accept any bug reports or contributions yet.
+All contributions are welcome, new issues, pull requests and ideas! 
+
+[![donate](https://img.shields.io/badge/donate-%CE%9ETH%20/%20%C9%83TC-ff00cc.svg?style=flat&logo=ethereum)](https://commerce.coinbase.com/checkout/673e693e-be6d-4583-9791-611da87861e3)
 
