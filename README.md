@@ -17,12 +17,12 @@ site generator and web framework in one. With two modes of site generation.
 ## Installing
 Installing the generator is super easy.
 
-```
+```console
 λ npm install -g static-mina
 ```
 
 'stamina' should now be available on your CLI, check it with
-```
+```console
 λ stamina -h
 usage: console.js [-h] [-v] [-f FILE] [-d] [--template TEMPLATE] [--data DATA]
                   [--configure]
@@ -45,7 +45,7 @@ Ready to rock!
 
 Example of a minimal template
 
-```
+```xml
 <html>
 <style>
 	span {
@@ -59,7 +59,7 @@ Example of a minimal template
 ```
 
 A sample data file used to render the template,
-```
+```json
 {
 	"theme": {
 		"font": "red",
@@ -76,12 +76,12 @@ Now, create two files `template.html` to hold the template data and `site.json` 
 
 
 When installed we can generate a static site using the following snippet,
-```
+```console
 λ stamina --template template.html --data site.json
 ```
 
 Alternatively, we can create a dynamically loaded site using this,
-```
+```console
 λ stamina --dynamic --template template.html --data site.json
 ```
 
@@ -93,13 +93,13 @@ After running the above commands the generated site will be present under build/
 #### Multi-project setup
 To create a new project configuration file run the following,
 
-```
+```console
 λ stamina --configure
 ```
 
 This creates the file `stamina.json` in your current directory.
 
-```
+```json
 {
   "sites": [
     {
@@ -120,17 +120,17 @@ output directory, place your css/js/images there.
 
 #### Building a multi-project setup
 Build all projects in `stamina.json`
-```
+```console
 λ stamina
 ```
 
 Build all projects in configuration file settings.json,
-```
+```console
 λ stamina -f projects/settings.json
 ```
 
 Build with specified project file and site name,
-```
+```console
 λ stamina -f projects/settings.json --name mywebsite-1
 ```
 
@@ -145,7 +145,7 @@ data 	 - a local data file or in the future also a remote file
 content  - this is the content of the link that is created.
 
 Example
-```
+```xml
 <div class="some-css">
 	${link('templates/git-project.html', 'sites/my-project.json', 
 		`<div>click me</div>`
@@ -155,7 +155,7 @@ Example
 
 Produces the following link in static mode:
 
-```
+```xml
 <a href="javscript:void(0)" onmousedown="event.which == 1 ? location.href='template' : ''">
 	content
 </a>
@@ -164,7 +164,7 @@ Note that 'template' here will reference a new filename, which is the template r
 
 A link looks like this in dynamic mode:
 
-```
+```xml
 <a href="javscript:void(0)" onmousedown="link_load(template, site)" onmouseover="link_preload(template, site)">
 	content
 </a>
