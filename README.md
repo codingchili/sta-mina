@@ -61,13 +61,13 @@ Example of a minimal template
 A sample data file used to render the template,
 ```json
 {
-	"theme": {
-		"font": "red",
-		"bg": "#000"
-	},
-	"text": {
-		"title": "hello world."
-	}
+  "theme": {
+    "font": "red",
+    "bg": "#000"
+  },
+  "text": {
+    "title": "hello world."
+  }
 }
 ```
 
@@ -101,15 +101,13 @@ This creates the file `stamina.json` in your current directory.
 
 ```json
 {
-  "sites": [
-    {
-      "template": "path/to/your/template.html",
-      "data": "path/to/your/data.json",
-      "dynamic": false,
-      "name": "sample-site",
-      "web": "./web"
-    }
-  ]
+  "sites": [{
+    "template": "path/to/your/template.html",
+    "data": "path/to/your/data.json",
+    "dynamic": false,
+    "name": "sample-site",
+    "web": "./web"
+  }]
 }
 ```
 
