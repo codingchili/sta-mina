@@ -32,7 +32,7 @@ ${line}: ${target}</textarea>
             <pre><code>${e.stack}</code></pre>
             </h4>
             <span style="position:absolute;bottom:32px;left:0;right:0;text-align:center;">
-                sta-mina &copy 2018 Robin Duda
+                sta-mina &copy 2019 Robin Duda
             </span>
         </body>
         </html>
