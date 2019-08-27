@@ -34,8 +34,8 @@ Optional arguments:
   -v, --version         Show program's version number and exit.
   -f FILE, --file FILE  local file with project settings.
   -d, --dynamic         generate a dynamic site, default is false.
-  --template TEMPLATE   local file or URL to a .html template.
-  --data DATA           local file or URL to a .json file.
+  --template TEMPLATE   local .html template.
+  --data DATA           local json/yaml file.
   --configure           generates project configuration.
 ``` 
 
