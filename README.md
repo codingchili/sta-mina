@@ -48,41 +48,38 @@ Example of a minimal template
 ```xml
 <html>
 <style>
-	span {
-		color: ${theme.font}
-	}
+    span {
+        color: ${theme.font}
+    }
 </style>
 <body bgcolor="${theme.bg}">
-	<span>${text.title}</span>
+    <span>${text.title}</span>
 </body>
 </html>
 ```
 
-A sample data file used to render the template,
-```json
-{
-  "theme": {
-    "font": "red",
-    "bg": "#000"
-  },
-  "text": {
-    "title": "hello world."
-  }
-}
+A sample data file used to render the template, supports json and yaml.
+```yaml
+---
+theme:
+  font: red
+  bg: "#000"
+text:
+  title: hello world.
 ```
 
-Now, create two files `template.html` to hold the template data and `site.json` to hold the data.
+Now, create two files `template.html` to hold the template data and `site.yaml` to hold the data.
 
 
 
 When installed we can generate a static site using the following snippet,
 ```console
-λ stamina --template template.html --data site.json
+λ stamina --template template.html --data site.yaml
 ```
 
 Alternatively, we can create a dynamically loaded site using this,
 ```console
-λ stamina --dynamic --template template.html --data site.json
+λ stamina --dynamic --template template.html --data site.yaml
 ```
 
 Dynamic sites are rendered at runtime, which means that we can point to two templates at 
